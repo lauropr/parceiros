@@ -1,0 +1,41 @@
+<mvc:View controllerName="z00.parceiros.controller.BPList"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="tabelaBPs" growing="true" mode="SingleSelectMaster" 
+                itemPress="aoSelecionarBP"
+                items="{/Parceiros}">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>parceiros}" />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="{i18n>descricao}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>tipo}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>regiao}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>pais}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation">
+                        <cells> <!--pode ser omitido, pois é default-->
+                            <ObjectIdentifier title="{PartnerId}" text="{PartnerName1} {PartnerName2}" />
+                            <Text text="{PartnerType}" />
+                            <Text text="{Region}" />
+                            <Text text="{Country}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,59 @@
+<mvc:View controllerName="z00.parceiros.controller.BPDetail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <f:SimpleForm id="formParceiro"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Id" />
+				<Text text="{PartnerId}" />
+
+                <Label text="Tipo" />
+				<Text text="{PartnerType}" />
+
+                <Label text="Descrição" />
+				<Text text="{PartnerName1} {PartnerName2}" />
+
+                <Label text="Termos de Pesquisa" />
+				<Text text="{SearchTerm1} {SearchTerm2}" /> 
+
+                <Label text="País" />
+				<Text text="{Country}" /> 
+
+                <Label text="Distrito" />
+				<Text text="{Distric}" /> 
+
+                <Label text="Região" />
+				<Text text="{Region}" /> 
+
+                <Label text="Cidade" />
+				<Text text="{City}" /> 
+
+                <Label text="Rua/Numero" />
+				<Text text="{ parts: [{ path: 'Street' }, { path: 'HouseNumber'}], 
+                              formatter: 'formataRuaNumero'
+                            }" /> 
+
+            </f:content>
+		</f:SimpleForm>
+
+
+        </content>
+    </Page>
+</mvc:View>
