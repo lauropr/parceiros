@@ -57,9 +57,9 @@
             <OverflowToolbar>
                 <content>
                     <ToolbarSpacer />
-                    <Button text="Editar" press="aoEditar" visible="{botoes>/visualizacao}" />
-                    <Button text="Salvar" press="aoSalvar" visible="{botoes>/edicao}" />
-                    <Button text="Cancelar" press="aoCancelar" visible="{botoes>/edicao}" />
+                    <Button text="Editar" press="aoEditar" type="Emphasized" visible="{botoes>/visualizacao}" />
+                    <Button text="Salvar" press="aoSalvar" type="Accept" visible="{botoes>/edicao}" />
+                    <Button text="Cancelar" press="aoCancelar" type="Reject" visible="{botoes>/edicao}" />
                 </content>
             </OverflowToolbar>
         </footer>

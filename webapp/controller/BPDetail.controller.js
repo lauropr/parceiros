@@ -1,12 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "sap/m/MessageBox"
+    "sap/m/MessageBox",
+    "sap/m/MessageToast"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, MessageBox) {
+    function (Controller, JSONModel, MessageBox, MessageToast) {
         "use strict";
 
         return Controller.extend("z00.parceiros.controller.BPDetail", {
@@ -116,7 +117,28 @@ sap.ui.define([
                         }
                     }.bind(this)  //salva o contexto do this apontando para o controller
                 });
+            },
+
+            aoSalvar: function(){
+                let oView = this.getView();
+                oView.setBusy(true);
+
+                let oModel = this.getView().getModel();
+                let oDados = this.getView().getBindingContext().getObject();
+
+                oModel.update(this.sCaminhoContexto, oDados, {
+                    success: function(oData){
+                        MessageToast.show("Parceiro foi atualizado com sucesso");
+                        oView.setBusy(false);
+                    },
+
+                    error: function(){
+
+                    }
+                });
+
             }
+
 
         });
     });
