@@ -4,56 +4,66 @@
     xmlns:f="sap.ui.layout.form">
     <Page id="page" title="{i18n>title}">
         <content>
-            <f:SimpleForm id="formParceiro"
-			editable="false"
-			layout="ResponsiveGridLayout"
-			labelSpanXL="3"
-			labelSpanL="3"
-			labelSpanM="3"
-			labelSpanS="12"
-			adjustLabelSpan="false"
-			emptySpanXL="4"
-			emptySpanL="4"
-			emptySpanM="4"
-			emptySpanS="0"
-			columnsXL="1"
-			columnsL="1"
-			columnsM="1"
-			singleContainerFullSize="false" >
-			<f:content>
-				<Label text="Id" />
-				<Text text="{PartnerId}" />
+                <f:SimpleForm id="formParceiro"
+                editable="false"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false" >
+                <f:content>
+                    <Label text="Id" />
+                    <Input value="{PartnerId}" editable="{inputs>/editavel}"/>
 
-                <Label text="Tipo" />
-				<Text text="{PartnerType}" />
+                    <Label text="Tipo" />
+                    <Input value="{PartnerType}" editable="{inputs>/editavel}"/>
 
-                <Label text="Descrição" />
-				<Text text="{PartnerName1} {PartnerName2}" />
+                    <Label text="Descrição" />
+                    <Input value="{PartnerName1} {PartnerName2}" editable="{inputs>/editavel}"/>
 
-                <Label text="Termos de Pesquisa" />
-				<Text text="{SearchTerm1} {SearchTerm2}" /> 
+                    <Label text="Termos de Pesquisa" />
+                    <Input value="{SearchTerm1} {SearchTerm2}" editable="{inputs>/editavel}"/> 
 
-                <Label text="País" />
-				<Text text="{Country}" /> 
+                    <Label text="País" />
+                    <Input value="{Country}" editable="{inputs>/editavel}"/> 
 
-                <Label text="Distrito" />
-				<Text text="{Distric}" /> 
+                    <Label text="Distrito" />
+                    <Input value="{Distric}" editable="{inputs>/editavel}"/> 
 
-                <Label text="Região" />
-				<Text text="{Region}" /> 
+                    <Label text="Região" />
+                    <Input value="{Region}" editable="{inputs>/editavel}"/> 
 
-                <Label text="Cidade" />
-				<Text text="{City}" /> 
+                    <Label text="Cidade" />
+                    <Input value="{City}" editable="{inputs>/editavel}"/> 
 
-                <Label text="Rua/Numero" />
-				<Text text="{ parts: [{ path: 'Street' }, { path: 'HouseNumber'}], 
-                              formatter: 'formataRuaNumero'
-                            }" /> 
+                    <Label text="Rua/Numero" />
+                    <Input value="{ parts: [{ path: 'Street' }, { path: 'HouseNumber'}], 
+                                formatter: 'formataRuaNumero'
+                                }" editable="{inputs>/editavel}" /> 
 
-            </f:content>
-		</f:SimpleForm>
-
-
+                </f:content>
+            </f:SimpleForm>
         </content>
+        <footer>
+            <OverflowToolbar>
+                <content>
+                    <ToolbarSpacer />
+                    <Button text="Editar" press="aoEditar" visible="{botoes>/visualizacao}" />
+                    <Button text="Salvar" press="aoSalvar" visible="{botoes>/edicao}" />
+                    <Button text="Cancelar" press="aoCancelar" visible="{botoes>/edicao}" />
+                </content>
+            </OverflowToolbar>
+        </footer>
+
+
     </Page>
 </mvc:View>
