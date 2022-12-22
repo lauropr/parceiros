@@ -1,11 +1,12 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "sap/m/MessageBox"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel) {
+    function (Controller, JSONModel, MessageBox) {
         "use strict";
 
         return Controller.extend("z00.parceiros.controller.BPDetail", {
@@ -83,19 +84,38 @@ sap.ui.define([
                 oModeloBotoes.setProperty("/edicao", true);
                 oModeloBotoes.setProperty("/visualizacao", false);
 
+                //salvar o caminho do contexto em uma variável do controller (global) para um possível reset
+                this.sCaminhoContexto = this.getView().getBindingContext().getPath();
+
             },
 
             aoCancelar: function(oEvent){
+                
+                MessageBox.show("Deseja cancelar a edição?", {
+                    title: "Cancelamento de edição",
+                    actions: [MessageBox.Action.YES, MessageBox.Action.NO],
+                    onClose: function(oAction){
+                        if (oAction === MessageBox.Action.YES){
+                            //resgata modelo inputs para alterar a propriedade /editavel
+                            let oView = this.getView();
 
-                //resgata modelo inputs para alterar a propriedade /editavel
-                let oView = this.getView();
+                            let oModeloInputs = oView.getModel("inputs");
+                            oModeloInputs.setProperty("/editavel", false);
 
-                let oModeloInputs = oView.getModel("inputs");
-                oModeloInputs.setProperty("/editavel", false);
+                            let oModeloBotoes = oView.getModel("botoes");
+                            oModeloBotoes.setProperty("/edicao", false);
+                            oModeloBotoes.setProperty("/visualizacao", true);
 
-                let oModeloBotoes = oView.getModel("botoes");
-                oModeloBotoes.setProperty("/edicao", false);
-                oModeloBotoes.setProperty("/visualizacao", true);
+                            //resgata o modelo OData
+                            let oModel = this.getView().getModel();
+                            //fazer reset de alterações
+                            let aCaminhos = [
+                                this.sCaminhoContexto
+                            ];
+                            oModel.resetChanges(aCaminhos);
+                        }
+                    }.bind(this)  //salva o contexto do this apontando para o controller
+                });
             }
 
         });
