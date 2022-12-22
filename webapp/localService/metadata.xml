@@ -6,18 +6,18 @@
                 <Key>
                     <PropertyRef Name="PartnerId"/>
                 </Key>
-                <Property Name="PartnerId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="PartnerType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Partner Cat." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="PartnerName1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name 1/Last Nm" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="PartnerName2" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name2/First Nme" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="SearchTerm1" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search Term 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="SearchTerm2" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search Term 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="HouseNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="House Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="Distric" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="District" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PartnerId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner"/>
+                <Property Name="PartnerType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Partner Cat."/>
+                <Property Name="PartnerName1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name 1/Last Nm"/>
+                <Property Name="PartnerName2" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name2/First Nme"/>
+                <Property Name="SearchTerm1" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search Term 1"/>
+                <Property Name="SearchTerm2" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search Term 2"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Street"/>
+                <Property Name="HouseNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="House Number"/>
+                <Property Name="Distric" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="District"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="City"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country"/>
                 <NavigationProperty Name="Contatos" Relationship="Z00_PARCEIROS_V2_SRV.Parceiro_Contato" FromRole="FromRole_Parceiro_Contato" ToRole="ToRole_Parceiro_Contato"/>
             </EntityType>
             <EntityType Name="Contato" sap:content-version="1">

@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.5"
+metadata:
+  name: z00.parceiros
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://vm63.4hub.cloud:44363
+        app:
+          name: Z00_PARCEIROS
+          description: Aplicação UI5 de Parceiros
+          package: Z_FIORI_FLP
+          transport: S4HK902150

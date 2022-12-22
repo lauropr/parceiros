@@ -41,6 +41,8 @@ sap.ui.define([
                 oModeloBotoes.setProperty("/visualizacao", true);
                 oView.setModel(oModeloBotoes, "botoes");
 
+                this.getOwnerComponent().getModel().setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);
+
             },
 
             populaDadosDetalhe: function(oEvent){
@@ -120,12 +122,15 @@ sap.ui.define([
             },
 
             aoSalvar: function(){
+                
                 let oView = this.getView();
                 oView.setBusy(true);
 
                 let oModel = this.getView().getModel();
-                let oDados = this.getView().getBindingContext().getObject();
+                oModel.updateBindings(true);
 
+                let oDados = this.getView().getBindingContext().getObject();
+                debugger;
                 oModel.update(this.sCaminhoContexto, oDados, {
                     success: function(oData){
                         MessageToast.show("Parceiro foi atualizado com sucesso");

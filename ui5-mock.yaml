@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
-
 specVersion: "2.5"
 metadata:
   name: z00.parceiros
@@ -9,7 +7,7 @@ server:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        ignoreCertError: false
         ui5:
           path:
             - /resources
@@ -18,7 +16,7 @@ server:
         backend:
           - path: /sap
             url: https://vm63.4hub.cloud:44363
-            client: '120'
+            client: "120"
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -30,7 +28,7 @@ server:
       configuration:
         mountPath: /
         services:
-          - urlPath: /sap/opu/odata/sap/Z00_PARCEIROS_V2_SRV
+          - urlPath: /sap/opu/odata/sap/Z00_PARCEIROS_V2_SRV/
             metadataPath: ./webapp/localService/metadata.xml
             mockdataPath: ./webapp/localService/data
             generateMockData: true
