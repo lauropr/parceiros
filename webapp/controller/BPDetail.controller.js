@@ -44,6 +44,8 @@ sap.ui.define([
                     return sRua.concat(", " + sNumero);
                 }else{
                     return "";
+
+                    //nova alteração
                 }
             }
 
